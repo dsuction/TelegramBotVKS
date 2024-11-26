@@ -9,11 +9,6 @@ from app.config.config import TOKEN_API
 from app.handlers.user_handlers import register_user_handlers
 
 
-
-
-
-
-
 def register_handlers(dp: Dispatcher) -> None:
     register_user_handlers(dp)
 
