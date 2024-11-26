@@ -1,4 +1,4 @@
-from api_communucation.api_requests import post_request
+from api_requests import post_request
 
 
 # login_test = "hantaton09"
@@ -14,9 +14,9 @@ def login(login: str, password: str):
 
     headers = {"Content-Type": "application/json"}
 
-    link = 'https://test.vcc.uriit.ru/api/auth/login'
+    url = 'https://test.vcc.uriit.ru/api/auth/login'
 
-    return post_request(data=data, headers=headers, link=link)
+    return post_request(data=data, headers=headers,  url=url)
 
 
 
