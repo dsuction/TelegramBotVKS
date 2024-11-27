@@ -1,11 +1,11 @@
-import requests
 import json
+
 import requests
 
 
 def auth_login(login: str, password: str):
     data = {
-        "login": login,
+        "login_L": login,
         "password": password,
         "fingerprint": {}
     }
@@ -14,4 +14,5 @@ def auth_login(login: str, password: str):
     response = requests.post('https://test.vcc.uriit.ru/api/auth/login', data=json.dumps(data), headers=headers)
 
     return response.json()
+
 

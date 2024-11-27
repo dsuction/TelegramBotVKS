@@ -2,12 +2,13 @@ import asyncio
 import logging
 import sys
 
-from aiogram import Bot, Dispatcher
+from aiogram import Bot
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
 from config.config import TOKEN_API
-from telegram_bot.app.handlers.user_handlers import register_user_handlers
+from telegram_bot.app.handlers.user_handlers import *
+from telegram_bot.app.state.register import RegisterState
 
 
 def register_handlers(dp: Dispatcher) -> None:
@@ -18,6 +19,12 @@ async def main() -> None:
     bot = Bot(token=TOKEN_API, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
 
+    """регистрация хендлеров регистрации"""
+    dp.message.register(register_name, RegisterState.regName)
+    dp.message.register(register_login, RegisterState.regLogin)
+    dp.message.register(register_password, RegisterState.regPassword)
+    dp.message.register(register_email, RegisterState.regEmail)
+    dp.message.register(register_phone, RegisterState.regPhone)
     register_handlers(dp)
 
     try:
