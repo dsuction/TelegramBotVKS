@@ -20,8 +20,8 @@ def login(login: str, password: str):
 
 
 def register(login: str = '', password: str = '', email: str = '', last_name: str = '', first_name: str = '',
-             middle_name: str = 'Родионович', phone: str = '', birthday: str = '2007-11-05', role_id: int = 5,
-             type_s: str = 'native'):
+             middle_name: str = '', phone: str = '', birthday: str = '', role_id: int = 5,
+             type_s: str = ''):
     data = {
         "login": login,
         "password": password,
@@ -38,14 +38,10 @@ def register(login: str = '', password: str = '', email: str = '', last_name: st
     url = 'https://test.vcc.uriit.ru/api/auth/register'
     return post_request(data=data, headers=headers, url=url)
 
-"""
-print(register(login='denisa', password='printMail', email='da0434395@gmail.com', last_name='андреев',
-               first_name='денис', middle_name='андреевич', phone='79658338148', birthday='2007-10-08', role_id=5,
-               type_s='native'))"""
-
 
 def logout():
     pass
+
 
 def reset_password():
     pass

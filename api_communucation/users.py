@@ -23,5 +23,3 @@ def create_user(login: str = '', password: str = '', email: str = '', last_name:
 
     return post_request(data=data, headers=headers, url=url)
 
-    
-print(create_user('string', 'string', 'user@example.com', 'string', 'string', 'string', 'string', '2024-11-26', [5], 3, 1, True))
