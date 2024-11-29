@@ -17,7 +17,7 @@ def login(login: str, password: str):
     url = 'https://test.vcc.uriit.ru/api/auth/login'
 
     return post_request(data=data, headers=headers,  url=url)
-
+print()
 
 def register(login: str = '', password: str = '', email: str = '', last_name: str = '', first_name: str = '',
              middle_name: str = '', phone: str = '', birthday: str = '', role_id: int = 5,
